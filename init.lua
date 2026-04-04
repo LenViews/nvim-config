@@ -41,5 +41,3 @@ require('lazy').setup({
 		end
 	}
 })
-
-vim.wo.number = true
