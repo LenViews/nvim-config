@@ -1,3 +1,5 @@
+require 'core.options'
+require 'core.keymaps'
 
 -- [[ Install 'Lazy.nvim' plugin manager ]]
 
@@ -21,6 +23,22 @@ require('lazy').setup({
 			"MunifTanjim/nui.nvim",
 			-- "3rd/image.nvim", -- Optional image support in preview window
 		}
+	},
+	{
+		'shaunsingh/nord.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.nord_contrast = true
+			vim.g.nord_borders = false
+			vim.g.nord_disable_background = false
+			vim.g.nord_italic = false
+			vim.g.nord_uniform_diff_background = true
+			vim.g.nord_bold = false
+
+			-- load the colorscheme
+			require('nord').set()
+		end
 	}
 })
 
